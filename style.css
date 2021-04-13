@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #1e2a3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+a {
+    color: #fff;
+}
+.music-container {
+    background-color: #029a83;
+    border-radius: 15px;
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+}
+
+.img-container {
+    position: relative;
+    width: 110px;
+}
+
+.img-container::after {
+    content: '';
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* con estro lo centramos el punto blanco */
+}
+
+.img-container img {
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: rotate 3s linear infinite; /* en la parte del keyframes lo creamos el rotate */
+
+    animation-play-state: paused; /* Le indivamos que inicialmente la animacion esta en pausa */
+}
+
+.music-container.play .img-container img {
+    animation-play-state: running; /* le indicamos al music-contianer que si tiene .play 
+                                    corremos la animacion osea si le agregamos esa clase music-container play  */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn {
+    background-color: #029a83;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.action-btn:focus {
+    outline: none !important;
+}
+
+.action-btn-mute {
+    border: 0;
+    font-size: 15px;
+    cursor: pointer;
+    background: #19212d;
+}
+
+.action-btn-mute i {
+    color: #fff;
+}
+
+.action-btn-big {
+    color: rgba(255, 255, 255, 0.774);
+    font-size: 30px;
+}
+
+.action-btn-mute:focus {
+    outline: 0;
+}
+
+.music-info {
+    background-color: hsl(218deg 25% 10% / 50%);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    z-index: 0;
+}
+
+.music-info h4 {
+    margin: 0;
+}
+
+.music-container.play .music-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.music-volume {
+    background-color: hsl(218deg 25% 10% / 50%);
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 120px;
+    padding: 5px;
+    margin-right: 57px;
+    opacity: 0;
+    transform: translateY(0%);
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35px;
+}
+
+.music-container.volume .music-volume {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress {
+    background-color: #029a83;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.progress-container-volume {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 100%;
+    width: 4px;
+    transform: rotate(180deg);
+}
+
+.progress-volume {
+    background-color: #029a83;
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    transition: height 0.1s linear;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 50px;    
+    text-align: center;
+}

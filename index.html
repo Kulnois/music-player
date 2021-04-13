@@ -14,6 +14,47 @@
 </head>
 <body>
     <h1>Music Player</h1>
+    <div class="music-container">
+        <div class="music-info">
+            <h4 id="title"></h4>
+            <div class="progress-container">
+                <div class="progress">
+
+                </div>
+            </div>
+        </div>
+        <div class="music-volume">
+            <div class="progress-container-volume">
+                <div class="progress-volume">
+                </div>
+            </div>
+            <button id="mute" class="action-btn-mute">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+        <audio src="music/ukulele.mp3" id="audio"></audio>
+        <div class="img-container">
+            <img src="images/ukulele.jpg" alt="music-cover" id="cover">
+        </div>
+        <div class="navigation">
+            <button id="prev" class="action-btn">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn">
+                <i class="fas fa-forward"></i>
+            </button>            
+            <button id="volument" class="action-btn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="music-autor">Music provided by NoCopyrightSounds Free Download/Stream: <a href="http://NCS.io/DISTODD" target="_blank" rel="noopener noreferrer">DISTODD</a></p>
+        © 2020 All rights reserved by <a href="http://kulnois.com" target="_blank" rel="noopener noreferrer">Kulnois</a>
+    </div>
     <script src="script.js"></script>    
 </body>
 </html>
