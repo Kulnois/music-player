@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * {
     box-sizing: border-box;
@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     margin: 0;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'Lato', sans-serif;
     background-color: #1e2a3a;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@ a {
     left: 50%;
     bottom: 50%;
     border-radius: 50%;
-    transform: translate(-50%, -50%); /* con estro lo centramos el punto blanco */
+    transform: translate(-50%, -50%);
 }
 
 .img-container img {
@@ -55,14 +55,13 @@ a {
     bottom: 0;
     left: 0;
 
-    animation: rotate 3s linear infinite; /* en la parte del keyframes lo creamos el rotate */
+    animation: rotate 3s linear infinite;
 
-    animation-play-state: paused; /* Le indivamos que inicialmente la animacion esta en pausa */
+    animation-play-state: paused;
 }
 
 .music-container.play .img-container img {
-    animation-play-state: running; /* le indicamos al music-contianer que si tiene .play 
-                                    corremos la animacion osea si le agregamos esa clase music-container play  */
+    animation-play-state: running; 
 }
 
 @keyframes rotate {
